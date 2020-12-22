@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "6902382949",
+    "project_id": "warrenty-service-management",
+    "storage_bucket": "warrenty-service-management.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:6902382949:android:63cd3c44bbb7d5fc06618c",
+        "android_client_info": {
+          "package_name": "com.example.mobin"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "6902382949-jrsh6ohujdt1kk3b8fofpnh3teiappln.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAJQT9PKIm4VUjwNMGH1N-Ot_RToaUCQEw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "6902382949-jrsh6ohujdt1kk3b8fofpnh3teiappln.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
