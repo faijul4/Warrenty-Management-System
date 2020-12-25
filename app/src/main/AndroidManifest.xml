@@ -9,7 +9,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ServiceLog"></activity>
+        <activity android:name=".Addstatus"></activity>
+        <activity android:name=".Admin_dashboard" />
+        <activity android:name=".Chat" />
+        <activity android:name=".Servicedashboard" />
+        <activity android:name=".ServiceLog" />
         <activity android:name=".Admin_log" />
         <activity android:name=".Service_Request" />
         <activity android:name=".Service_dashboard" />
@@ -17,7 +21,6 @@
         <activity android:name=".Seller_dashboard" />
         <activity android:name=".Seller_Register" />
         <activity android:name=".Seller_Login" />
-        <activity android:name=".Service_Register" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

@@ -23,4 +23,13 @@ public class Product_viewmodel extends ViewModel {
 
         product_repository.addevent_to_db(product);
     }
+    public  void  delete(Seller_products_pojos seller_products_pojos){
+        product_repository.deleteeventfromdb(seller_products_pojos);
+    }
+    public  void getProductdetails(String productID){
+        productdetailsLD=product_repository.getproductsbyeventid(productID);
+    }
+    public  void update(Seller_products_pojos seller_products_pojos){
+        product_repository.updatefromdb(seller_products_pojos);
+    }
 }

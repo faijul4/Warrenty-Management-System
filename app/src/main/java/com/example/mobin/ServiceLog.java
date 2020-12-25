@@ -22,8 +22,8 @@ public class ServiceLog extends AppCompatActivity {
         Logged.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (usernameET.getText().toString().equals("masum") && passwordET.getText().toString().equals("23") ){
-                    Intent intent=new Intent(ServiceLog.this,Seller_Register.class);
+                if (usernameET.getText().toString().equals("mobin") && passwordET.getText().toString().equals("23") ){
+                    Intent intent=new Intent(ServiceLog.this,Service_dashboard.class);
                     startActivity(intent);
 
                 }else {

@@ -29,18 +29,10 @@ public class Seller_Register extends AppCompatActivity {
         Seller_password = findViewById(R.id.Seller_pass_regET);
         Seller_confirmpass = findViewById(R.id.seller_confirmpassET);
         Seller_email = findViewById(R.id.Seller_emailRegET);
-        ServiceTV = findViewById(R.id.ServicTV);
         Seller_Register= findViewById(R.id.Seller_REgBTN);
         showError = findViewById(R.id.errorTV);
         login_viewmodel = ViewModelProviders.of(Seller_Register.this).get(Login_Viewmodel.class);
-        ServiceTV.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent=new Intent(Seller_Register.this,Service_Register.class);
-                startActivity(intent);
 
-            }
-        });
         Seller_Register.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

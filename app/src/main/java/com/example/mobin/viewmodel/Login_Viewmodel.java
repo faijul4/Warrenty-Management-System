@@ -39,10 +39,10 @@ public class Login_Viewmodel extends ViewModel {
 
         statelivedata=repository.registrationuser(userInformationPojo);
     }
-    public  void  Service_register(Service_pojos service_pojos){
+   /* public  void  Service_register(Service_pojos service_pojos){
 
         statelivedata=repository.Service_registrationuser(service_pojos);
-    }
+    }*/
     public  void  getuserinfo(){
 
         userinfold=repository.getuserinfofromDB();

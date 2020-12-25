@@ -14,16 +14,22 @@ private CardView EntryCV,ServiceLOGCV,ExitCV,LogoutCV;
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_service_dashboard);
         EntryCV=findViewById(R.id.servicEntryCV);
-        ServiceLOGCV=findViewById(R.id.ServiceLOGCV);
+
         ExitCV=findViewById(R.id.exitCV);
-        LogoutCV=findViewById(R.id.logoutCV);
         EntryCV.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent=new Intent(Service_dashboard.this,Seller_Register.class);
+                Intent intent=new Intent(Service_dashboard.this,Servicedashboard.class);
                 startActivity(intent);
             }
         });
+      ExitCV.setOnClickListener(new View.OnClickListener() {
+          @Override
+          public void onClick(View v) {
+              Intent intent=new Intent(Service_dashboard.this,Chat.class);
+              startActivity(intent);
+          }
+      });
 
     }
 }

@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.ViewModelProviders;
 
 import android.app.DatePickerDialog;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -24,6 +25,7 @@ private EditText  SirialET,ModelET,BillET,WarrentybTN;
 private Button RegisterPRDCT;
 private Product_viewmodel product_viewmodel;
 private String warrentyDate="";
+private  String feedback="No info";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -45,8 +47,12 @@ private String warrentyDate="";
                 if (product_bill.isEmpty()&&product_model.isEmpty()&&product_warrenty.isEmpty()&&product_sirial.isEmpty()){
                     Toast.makeText(New_Sell_entry.this, "provide info", Toast.LENGTH_SHORT).show();
                 }else {
-                    Seller_products_pojos event=new Seller_products_pojos(null,product_sirial,product_model,Integer.parseInt(product_bill), product_warrenty,Productutils.getDateWithTime(),0);
+                    Seller_products_pojos event=new Seller_products_pojos(null,product_sirial,product_model,Integer.parseInt(product_bill), product_warrenty,Productutils.getDateWithTime(),0,feedback);
                     product_viewmodel.save(event);
+                    Intent intent=new Intent(New_Sell_entry.this,Seller_dashboard.class);
+                    startActivity(intent);
+                    Toast.makeText(New_Sell_entry.this, "sucess", Toast.LENGTH_SHORT).show();
+
 
 
                 }

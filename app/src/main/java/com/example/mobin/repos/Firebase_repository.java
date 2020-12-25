@@ -33,6 +33,7 @@ public class Firebase_repository {
         firebaseAuth=FirebaseAuth.getInstance();
         firebaseUser=firebaseAuth.getCurrentUser();
         this.statelivedata=statelivedata;
+
     }
     public  FirebaseUser getFirebaseUser(){
         return firebaseUser;
@@ -75,7 +76,7 @@ public class Firebase_repository {
 
         return statelivedata;
     }
-    public  MutableLiveData<Login_Viewmodel.Authenticationstate>  Service_registrationuser(final Service_pojos userInformationPojo){
+ /*   public  MutableLiveData<Login_Viewmodel.Authenticationstate>  Service_registrationuser(final Service_pojos userInformationPojo){
 
         firebaseAuth.createUserWithEmailAndPassword(userInformationPojo.getSelleremail(), userInformationPojo.getPassword()).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
             @Override
@@ -109,7 +110,7 @@ public class Firebase_repository {
         });
 
         return statelivedata;
-    }
+    }*/
     public  MutableLiveData<Login_Viewmodel.Authenticationstate>  loginfirebaseuser(String email, String password){
         firebaseAuth.signInWithEmailAndPassword(email, password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
             @Override

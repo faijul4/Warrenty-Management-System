@@ -1,6 +1,7 @@
 {
   "project_info": {
     "project_number": "6902382949",
+    "firebase_url": "https://warrenty-service-management-default-rtdb.firebaseio.com",
     "project_id": "warrenty-service-management",
     "storage_bucket": "warrenty-service-management.appspot.com"
   },

@@ -24,7 +24,6 @@ private Login_Viewmodel login_viewmodel;
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_seller__login);
-        Register=findViewById(R.id.SellerRGstrLOG);
         emailLOgin=findViewById(R.id.Seller_email_log);
         passwordlogin=findViewById(R.id.Seller_pass_Log);
         logBTN=findViewById(R.id.Seller_LoginBTN);

@@ -23,7 +23,7 @@ private Button Logged;
         Logged.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-              if (usernameET.getText().toString().equals("masum") && passwordET.getText().toString().equals("23") ){
+              if (usernameET.getText().toString().equals("mobin") && passwordET.getText().toString().equals("23") ){
                     Intent intent=new Intent(Admin_log.this,Seller_Register.class);
                     startActivity(intent);
 

@@ -8,10 +8,11 @@ public class Seller_products_pojos {
     private String warrenty;
     private String createDate;
     private int status;
+    private  String feedback;
     public Seller_products_pojos() {
     }
 
-    public Seller_products_pojos(String seller_product_ID, String si_number, String model_number, int bill, String warrenty, String createDate,int status) {
+    public Seller_products_pojos(String seller_product_ID, String si_number, String model_number, int bill, String warrenty, String createDate,int status,String feedback) {
         Seller_product_ID = seller_product_ID;
         Si_number = si_number;
         Model_number = model_number;
@@ -19,6 +20,15 @@ public class Seller_products_pojos {
         this.status=status;
         this.warrenty = warrenty;
         this.createDate = createDate;
+        this.feedback = feedback;
+    }
+
+    public String getFeedback() {
+        return feedback;
+    }
+
+    public void setFeedback(String feedback) {
+        this.feedback = feedback;
     }
 
     public String getSeller_product_ID() {

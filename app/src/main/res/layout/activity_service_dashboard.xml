@@ -26,18 +26,6 @@
                 android:layout_gravity="center"/>
 
         </androidx.cardview.widget.CardView>
-        <androidx.cardview.widget.CardView
-            android:layout_width="250dp"
-            android:layout_marginTop="5dp"
-            android:id="@+id/ServiceLOGCV"
-            android:layout_height="50dp">
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Service Center Login"
-                android:layout_gravity="center"/>
-
-        </androidx.cardview.widget.CardView>
 
         <androidx.cardview.widget.CardView
             android:layout_width="250dp"
@@ -47,23 +35,10 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Exit service"
+                android:text="Chat"
                 android:layout_gravity="center"/>
 
         </androidx.cardview.widget.CardView>
-        <androidx.cardview.widget.CardView
-            android:layout_width="250dp"
-            android:layout_marginTop="5dp"
-            android:id="@+id/logoutCV"
-            android:layout_height="50dp">
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Log Out"
-                android:layout_gravity="center"/>
-
-        </androidx.cardview.widget.CardView>
-
 
 
     </LinearLayout>

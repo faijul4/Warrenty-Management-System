@@ -30,7 +30,7 @@ public class Product_Repository {
     public Product_Repository() {
         prodiuctlistDB = new MutableLiveData<>();
         firebaseUser = FirebaseAuth.getInstance().getCurrentUser();
-        rootref = FirebaseDatabase.getInstance().getReference();
+        rootref= FirebaseDatabase.getInstance().getReference();
         userref = rootref.child(firebaseUser.getUid());
         productref = userref.child("product");
         productref.addValueEventListener(new ValueEventListener() {
@@ -50,6 +50,16 @@ public class Product_Repository {
             }
         });
     }
+    public  void updatefromdb(Seller_products_pojos seller_products_pojos){
+        String product_id=seller_products_pojos.getSeller_product_ID();
+        seller_products_pojos.setSeller_product_ID(product_id);
+        productref.child(product_id).setValue(seller_products_pojos).addOnSuccessListener(new OnSuccessListener<Void>() {
+            @Override
+            public void onSuccess(Void aVoid) {
+
+            }
+        });
+    }
         public  void  addevent_to_db(Seller_products_pojos product ){
             String productID=productref.push().getKey();
             product.setSeller_product_ID(productID);
@@ -65,6 +75,27 @@ public class Product_Repository {
                 }
             });
         }
+    public  MutableLiveData<Seller_products_pojos>  getproductsbyeventid(final String productid){
+        productref.child(productid).addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                Seller_products_pojos event=dataSnapshot.getValue(Seller_products_pojos.class);
+                productdetailsLD.postValue(event);
 
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        });return productdetailsLD;
+    }
+
+    public  void  deleteeventfromdb(Seller_products_pojos seller_products_pojos){
+        final String product_id=seller_products_pojos.getSeller_product_ID();
+        productref.child(product_id).removeValue();
+
+
+        }
     }
 

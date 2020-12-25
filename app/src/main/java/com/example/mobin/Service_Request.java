@@ -6,6 +6,7 @@ import androidx.lifecycle.MutableLiveData;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
@@ -15,6 +16,7 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import com.example.mobin.adapter.Product_adapter;
+import com.example.mobin.adapter.ServiceReq_adapter;
 import com.example.mobin.model.Seller_pojos;
 import com.example.mobin.model.Seller_products_pojos;
 import com.example.mobin.model.Service_pojos;
@@ -32,9 +34,9 @@ import java.util.Queue;
 
 public class Service_Request extends AppCompatActivity {
     private EditText RequestET;
-    private Button CheckBTN;
+    private Button CheckBTN,chatBTN;
     private RecyclerView recyclerView;
-    private Product_adapter product_adapter;
+    private ServiceReq_adapter serviceReq_adapter;
     private DatabaseReference rootref;
     private DatabaseReference userref;
     private  DatabaseReference productref;
@@ -50,16 +52,23 @@ public class Service_Request extends AppCompatActivity {
         RequestET = findViewById(R.id.ServiceREquestET);
         CheckBTN = findViewById(R.id.CheckBTN);
         recyclerView = findViewById(R.id.check_ReqRV);
+        chatBTN = findViewById(R.id.chatBTN);
         arrayList = new ArrayList<>();
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
-        product_adapter = new Product_adapter(this, arrayList);
-        recyclerView.setAdapter(product_adapter);
+        serviceReq_adapter = new ServiceReq_adapter(this, arrayList);
+        recyclerView.setAdapter(serviceReq_adapter);
 
         firebaseUser = FirebaseAuth.getInstance().getCurrentUser();
         rootref = FirebaseDatabase.getInstance().getReference();
         userref = rootref.child(firebaseUser.getUid());
-
+chatBTN.setOnClickListener(new View.OnClickListener() {
+    @Override
+    public void onClick(View v) {
+        Intent intent=new Intent(Service_Request.this,Chat.class);
+        startActivity(intent);
+    }
+});
         CheckBTN.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -86,7 +95,7 @@ public class Service_Request extends AppCompatActivity {
                                 arrayList.add(seller_products_pojos);
 
                             }
-                            product_adapter.notifyDataSetChanged();
+                            serviceReq_adapter.notifyDataSetChanged();
                         }else {
                             Toast.makeText(Service_Request.this, "not found", Toast.LENGTH_SHORT).show();
                             arrayList.clear();
