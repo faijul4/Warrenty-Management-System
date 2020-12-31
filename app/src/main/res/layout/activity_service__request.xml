@@ -4,6 +4,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
+    android:background="#FFAB40"
     android:layout_height="match_parent"
     tools:context=".Service_Request">
 
@@ -21,21 +22,46 @@
             android:ems="10"
             android:hint="Enter Sirial number"
             android:inputType="textPersonName" />
-
-        <Button
-            android:id="@+id/CheckBTN"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Check and REquest" />
+<androidx.cardview.widget.CardView
+    app:cardCornerRadius="30dp"
+    android:layout_width="200dp"
+    android:id="@+id/CheckBTN"
+    android:layout_marginLeft="100dp"
+    app:cardBackgroundColor="#689F38"
+    app:cardElevation="20sp"
+    android:layout_height="35dp">
+     <TextView
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+         android:textStyle="bold"
+         android:layout_gravity="center"
+         android:text="Check and Request"/>
+</androidx.cardview.widget.CardView>
         <androidx.recyclerview.widget.RecyclerView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:id="@+id/check_ReqRV"/>
-        <Button
+        <androidx.cardview.widget.CardView
+            app:cardCornerRadius="30dp"
+            android:layout_width="100dp"
+            android:id="@+id/chatBTN"
+            android:layout_gravity="center"
+            app:cardBackgroundColor="#B6ABC6"
+            app:cardElevation="20sp"
+            android:layout_height="35dp">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textStyle="bold"
+                android:layout_gravity="center"
+                android:text="Message"/>
+        </androidx.cardview.widget.CardView>
+       <!-- <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_gravity="center"
             android:text="chat"
-            android:id="@+id/chatBTN"/>
+            android:id="@+id/chatBTN"/>-->
     </LinearLayout>
 
 </LinearLayout>

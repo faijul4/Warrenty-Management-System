@@ -7,6 +7,8 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
+import com.example.mobin.test.M_activity;
+
 public class Service_dashboard extends AppCompatActivity {
 private CardView EntryCV,ServiceLOGCV,ExitCV,LogoutCV;
     @Override
@@ -26,7 +28,7 @@ private CardView EntryCV,ServiceLOGCV,ExitCV,LogoutCV;
       ExitCV.setOnClickListener(new View.OnClickListener() {
           @Override
           public void onClick(View v) {
-              Intent intent=new Intent(Service_dashboard.this,Chat.class);
+              Intent intent=new Intent(Service_dashboard.this, M_activity.class);
               startActivity(intent);
           }
       });

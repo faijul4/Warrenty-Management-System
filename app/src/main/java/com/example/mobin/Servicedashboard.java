@@ -9,6 +9,7 @@ import android.os.Bundle;
 import android.widget.Toast;
 
 import com.example.mobin.adapter.Product_adapter;
+import com.example.mobin.adapter.Service_adapter;
 import com.example.mobin.model.Seller_products_pojos;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -23,7 +24,7 @@ import java.util.ArrayList;
 
 public class Servicedashboard extends AppCompatActivity {
 private RecyclerView ServiceRv;
-private Product_adapter product_adapter;
+private Service_adapter service_adapter;
 private ArrayList<Seller_products_pojos> arrayList;
     private DatabaseReference rootref;
     private DatabaseReference userref;
@@ -36,11 +37,12 @@ private ArrayList<Seller_products_pojos> arrayList;
         ServiceRv=findViewById(R.id.ServiceRV);
         arrayList = new ArrayList<>();
         ServiceRv.setLayoutManager(new LinearLayoutManager(this));
-        product_adapter = new Product_adapter(this, arrayList);
-        ServiceRv.setAdapter(product_adapter);
+        service_adapter = new Service_adapter(this, arrayList);
+        ServiceRv.setAdapter(service_adapter);
         firebaseUser = FirebaseAuth.getInstance().getCurrentUser();
         rootref = FirebaseDatabase.getInstance().getReference();
         userref = rootref.child(firebaseUser.getUid());
+
 
         Query query = userref.child("product").orderByChild("status").equalTo(1);
 
@@ -55,7 +57,7 @@ private ArrayList<Seller_products_pojos> arrayList;
                         arrayList.add(seller_products_pojos);
 
                     }
-                    product_adapter.notifyDataSetChanged();
+                    service_adapter.notifyDataSetChanged();
                 }else {
                     Toast.makeText(Servicedashboard.this, "not found", Toast.LENGTH_SHORT).show();
                     arrayList.clear();

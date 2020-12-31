@@ -7,62 +7,56 @@
     android:clickable="true"
     android:layout_width="match_parent"
     app:cardCornerRadius="30dp"
-    android:layout_height="174dp">
+    android:layout_height="434dp">
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="horizontal"
         android:padding="6dp"
-        android:weightSum="3.5">
+      >
+
         <LinearLayout
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:orientation="vertical"
             android:layout_weight="3">
 
+
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:fontFamily="sans-serif-black"
                 android:text="name of model"
-
+                android:layout_marginTop="20sp"
                 android:gravity="center"
-                android:textSize="28dp"
+                android:textSize="38dp"
                 android:id="@+id/ModelTV_row"/>
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center"
+                android:layout_marginTop="50dp"
                 android:orientation="horizontal">
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
 
-                    />
 
                 <TextView
                     android:id="@+id/row_depurturename"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_below="@id/ModelTV_row"
-                    android:text="Sirial NUmber :"
-
-                    android:textSize="16sp"
-
-                    />
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="30dp"
-                    android:layout_marginLeft="3dp"
+                    android:text="Sirial Number :  "
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+               android:layout_marginLeft="-60dp"
 
                     />
+
                 <TextView
                     android:id="@+id/SirialTV_row"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="number"
                     android:textSize="16sp"
-
                     />
             </LinearLayout>
             <LinearLayout
@@ -77,8 +71,10 @@
 
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text=" Bill:"
-                    android:textSize="16sp"
+                    android:text=" Bill       :"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    android:layout_marginLeft="20dp"
                     />
                 <TextView
                     android:id="@+id/Billtv_row"
@@ -104,8 +100,10 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:text="  Buying date:"
-                    android:textSize="16sp"
+                    android:text="Last Warrenty:"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    android:layout_marginLeft="-60dp"
                     />
 
                 <TextView
@@ -119,30 +117,77 @@
 
             </LinearLayout>
             <LinearLayout
-                android:layout_marginTop="3dp"
+                android:layout_marginTop="9dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <TextView
+                    android:gravity="center"
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="Selling Date:"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    android:layout_marginLeft="80dp"
+
+                    />
+
+                <TextView
+                    android:id="@+id/SellingDAte_row"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="10dp"
+                    android:text="1000"
+                    android:textSize="16sp"/>
+
+               <!-- <TextView
+                    android:id="@+id/SellingDAte_row"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="26sp"
+                    android:layout_marginLeft="70dp"
+                   android:layout_gravity="center"
+                    android:text="23/32/19 02:34 PM" />-->
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_marginTop="9dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal">
 
                 <TextView
-                    android:layout_marginLeft="6dp"
-                    android:id="@+id/SellingDAte_row"
+                    android:id="@+id/statusWarrR"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textSize="16sp"
-                    android:text="23/32/19 02:34 PM" />
-
-                <TextView
-                    android:id="@+id/statusWarrR"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_marginLeft="20dp"
-                    android:gravity="center"
-                    android:textSize="16sp"
+                    android:layout_marginLeft="59dp"
+                    android:textSize="26sp"
                     android:text="Have a Safe Journey"
-                  />
+                    />
 
             </LinearLayout>
+            <androidx.cardview.widget.CardView
+                android:layout_width="200dp"
+                android:layout_height="40dp"
+                android:layout_gravity="center"
+                app:cardCornerRadius="30dp"
+                android:id="@+id/changeBTN"
+                app:cardBackgroundColor="#D1CCD8"
+                android:layout_marginTop="60dp"
+                >
+                <TextView
+                    android:layout_gravity="center"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textStyle="bold"
+
+                    android:id="@+id/test"
+                    android:textColor="#000000"
+                    android:text="Service Request"/>
+            </androidx.cardview.widget.CardView>
 
 
 
@@ -151,17 +196,19 @@
 
         </LinearLayout>
 
-        <RelativeLayout
+     <!--   <RelativeLayout
             android:layout_width="0dp"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:layout_weight="0.4"
+            android:layout_gravity="center"
             android:orientation="vertical">
            <Button
                android:layout_width="wrap_content"
                android:layout_height="wrap_content"
                android:id="@+id/changeBTN"
+
                android:text="C"/>
-        </RelativeLayout>
+        </RelativeLayout>-->
 
     </LinearLayout>
     <!--

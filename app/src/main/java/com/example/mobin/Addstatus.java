@@ -1,25 +1,27 @@
-/*
+
 package com.example.mobin;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
+import androidx.viewpager.widget.ViewPager;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import com.example.mobin.helper.Productutils;
-import com.example.mobin.model.Seller_products_pojos;
+import com.example.mobin.fragments.Chatfrag;
+import com.example.mobin.fragments.UserFrag;
+import com.example.mobin.adapter.Viewpager_adapter;
 import com.example.mobin.viewmodel.Product_viewmodel;
+import com.google.android.material.tabs.TabLayout;
 
 public class Addstatus extends AppCompatActivity {
 private EditText STSET;
 private Button stsBTN;
 private Product_viewmodel product_viewmodel;
+
 
 
 private String updateproductID;
@@ -31,34 +33,20 @@ private String updateproductID;
         Intent i=getIntent();
         final String title=i.getStringExtra("id");
         Toast.makeText(this, title, Toast.LENGTH_SHORT).show();
-        STSET=findViewById(R.id.stsET);
+        TabLayout tabLayout=findViewById(R.id.tablayout);
+        ViewPager viewPager=findViewById(R.id.viewpager);
         product_viewmodel= ViewModelProviders.of(Addstatus.this).get(Product_viewmodel.class);
+        Viewpager_adapter viewPager1=new Viewpager_adapter(getSupportFragmentManager());
+         viewPager1.addFragment(new Chatfrag(),"masum");
+         viewPager1.addFragment(new UserFrag(),"mobin");
 
-        stsBTN=findViewById(R.id.stsBTN);
-        product_viewmodel.getProductdetails(title);
+         viewPager.setAdapter(viewPager1);
 
-        product_viewmodel.productdetailsLD.observe(this, new Observer<Seller_products_pojos>() {
-            @Override
-            public void onChanged(Seller_products_pojos seller_products_pojos) {
-             try {
-                 STSET.setText(String.valueOf(seller_products_pojos.getStatus()));
+         tabLayout.setupWithViewPager(viewPager);
 
 
 
-                 Toast.makeText(Addstatus.this, seller_products_pojos.getStatus(), Toast.LENGTH_SHORT).show();
-             }catch (Exception e){
-//                 Toast.makeText(Addstatus.this, (CharSequence) e, Toast.LENGTH_SHORT).show();
-             }
 
-            }
-        });
-        stsBTN.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                String Stts=Status;
-
-
-            }
-        });
     }
-}*/
+
+}

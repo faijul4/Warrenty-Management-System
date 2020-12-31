@@ -15,6 +15,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
+import androidx.cardview.widget.CardView;
 import androidx.fragment.app.FragmentActivity;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
@@ -86,11 +87,10 @@ holder.REQbtn.setOnClickListener(new View.OnClickListener() {
         AlertDialog.Builder builder = new AlertDialog.Builder(context);
         final EditText input=new EditText(context);
         input.setInputType(InputType.TYPE_CLASS_TEXT);
-
+       builder.setTitle("Tell us your problem of your product");
         builder.setView(input);
-        builder.setMessage("Are you sure you want to exit?")
-                .setCancelable(false)
-                .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+        builder.setCancelable(false)
+                .setPositiveButton("Confirm", new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int id) {
                         status="1";
                         feedback=input.getText().toString();
@@ -136,7 +136,7 @@ holder.REQbtn.setOnClickListener(new View.OnClickListener() {
 
     class ProductViewholder extends RecyclerView.ViewHolder {
         private TextView SirialTV,ModelTV,WarrentyTV,CreatedateTv,BillTV,Warrenty_status,RemainingTV;
-        private Button REQbtn;
+        private CardView REQbtn;
         public ProductViewholder(@NonNull View itemView) {
             super(itemView);
             SirialTV=itemView.findViewById(R.id.SirialTV_row);

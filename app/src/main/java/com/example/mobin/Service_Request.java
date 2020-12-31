@@ -2,6 +2,7 @@ package com.example.mobin;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.cardview.widget.CardView;
 import androidx.lifecycle.MutableLiveData;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -20,6 +21,7 @@ import com.example.mobin.adapter.ServiceReq_adapter;
 import com.example.mobin.model.Seller_pojos;
 import com.example.mobin.model.Seller_products_pojos;
 import com.example.mobin.model.Service_pojos;
+import com.example.mobin.test.M_activity;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
@@ -34,7 +36,7 @@ import java.util.Queue;
 
 public class Service_Request extends AppCompatActivity {
     private EditText RequestET;
-    private Button CheckBTN,chatBTN;
+    private CardView chatBTN,CheckBTN;
     private RecyclerView recyclerView;
     private ServiceReq_adapter serviceReq_adapter;
     private DatabaseReference rootref;
@@ -65,7 +67,7 @@ public class Service_Request extends AppCompatActivity {
 chatBTN.setOnClickListener(new View.OnClickListener() {
     @Override
     public void onClick(View v) {
-        Intent intent=new Intent(Service_Request.this,Chat.class);
+        Intent intent=new Intent(Service_Request.this, M_activity.class);
         startActivity(intent);
     }
 });

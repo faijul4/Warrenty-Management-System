@@ -28,7 +28,7 @@ public class Product_adapter  extends RecyclerView.Adapter<Product_adapter.Produ
     @Override
     public ProductViewholder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         LayoutInflater inflater=LayoutInflater.from(context);
-        View itemview=inflater.inflate(R.layout.service_row,parent,false);
+        View itemview=inflater.inflate(R.layout.admin_row,parent,false);
         return new ProductViewholder(itemview);
 
     }
@@ -44,12 +44,12 @@ holder.BillTV.setText(String.valueOf(productlist.get(position).getBill()));
         long differdate= Productutils.getDefferentBetweenTwoDate(Productutils.getcurrentdate(),goingdate);
         if (differdate==0)
         {
-            holder.RemainingTV.setText("Have a safe Journey!");
+            holder.RemainingTV.setText("Service timeout");
 
         }
         else if (differdate<0)
         {
-            holder.RemainingTV.setText("Tour Finished!");
+            holder.RemainingTV.setText("no service");
         }
 
         else

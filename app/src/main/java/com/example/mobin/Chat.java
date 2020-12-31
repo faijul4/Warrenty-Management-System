@@ -22,10 +22,10 @@ public class Chat extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_chat);
         myDatabase = FirebaseDatabase.getInstance().getReference();
-        chat=myDatabase.child("message");
+        chat=myDatabase.child("chats");
 
         final TextView myText = findViewById(R.id.textbox);
-        myDatabase.addValueEventListener(new ValueEventListener() {
+        chat.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
 
@@ -44,7 +44,7 @@ public class Chat extends AppCompatActivity {
     public void sendMessage(View view){
         EditText myEditText = findViewById(R.id.editText);
 
-        myDatabase.child("anom").setValue(myEditText.getText().toString());
+        myDatabase.child("anonymous").setValue(myEditText);
         myEditText.setText("");
     }
 }

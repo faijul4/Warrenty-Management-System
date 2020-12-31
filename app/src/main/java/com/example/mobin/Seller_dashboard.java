@@ -42,7 +42,8 @@ private Product_viewmodel product_viewmodel;
                 Intent intent=new Intent(Seller_dashboard.this,New_Sell_entry.class);
                 startActivity(intent);
             }
-        });product_viewmodel.productlistDB.observe(this, new Observer<List<Seller_products_pojos>>() {
+        });product_viewmodel.productlistDB.observe(this,
+                new Observer<List<Seller_products_pojos>>() {
             @Override
             public void onChanged(List<Seller_products_pojos> seller_products_pojos) {
                 product_adapter = new Product_adapter(Seller_dashboard.this, seller_products_pojos);
